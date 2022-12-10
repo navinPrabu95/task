@@ -1,0 +1,53 @@
+
+.home-ctn{
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+    width: 50%;
+    background-color: lightgray;
+}
+.home-ctn-head{
+    margin: 50px auto;
+}
+.home-ctn-anc{
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 100px;
+}
+.cus-container{
+    width: 100%;
+    height: 100vh;
+}
+.cus-main{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    padding: 50px 10px;
+}
+.ad-ed-customer{
+    padding: 10px 1px;
+    border-bottom: 2px solid lightgrey;
+}
+.ad-cus-address{
+    padding: 30px 1px; 
+}
+.sub-btn{
+    padding: 30px 1px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 15%;
+    margin-left: auto;
+}
+.list-main{
+    width: 80%;
+    margin: 20px auto;
+}
+.list-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
