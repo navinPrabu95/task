@@ -16,6 +16,7 @@ const EditForm = () => {
     useEffect(() => {
         axios.get(`http://localhost:7000/customer/${id}`).then(res => {
             setCusData(res.data.customer)
+            console.log(res.data.customer);
         }).catch(err => {
             console.log(err);
         })
@@ -101,7 +102,8 @@ const EditForm = () => {
 
     return (
         <div>
-            <Form>
+            {
+                cusData? <Form>
                 <div className='cus-main'>
                     <div className='ad-ed-customer'>
                         <div><h2>Add/Edit Customer</h2></div>
@@ -163,7 +165,8 @@ const EditForm = () => {
                         </Button>
                     </div>
                 </div>
-            </Form>
+            </Form> :"Waiting for server"
+            }
         </div>
     )
 }
