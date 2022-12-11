@@ -55,31 +55,31 @@ const EditForm = () => {
     
    
     const listData = useMemo(() => {
-        return addData.map((v, i) => {
+        return cusData ? cusData.address.map((v, i) => {
             return <div key={i}>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Address Type</Form.Label>
-                        <Form.Select name='addressType' onChange={(e)=>onSetInput(e,i)}>
+                        <Form.Select name='addressType' onChange={(e)=>onSetInput(e,i)} defaultValue={v.addressType}>
                             <option value='Buliding Address'>Buliding Address</option>
                             <option value='Shipping Address'>Shipping Address</option>
                         </Form.Select>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Street Address</Form.Label>
-                        <Form.Control placeholder="1234 Main St"  name='streetAddress' onChange={(e)=>onSetInput(e,i)}/>
+                        <Form.Control placeholder="1234 Main St"  name='streetAddress' onChange={(e)=>onSetInput(e,i)} defaultValue={v.streetAddress}/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridCity">
                         <Form.Label>City</Form.Label>
-                        <Form.Control placeholder="Enter City" name='city' onChange={(e)=>onSetInput(e,i)}/>
+                        <Form.Control placeholder="Enter City" name='city' onChange={(e)=>onSetInput(e,i)} defaultValue={v.city}/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridCity">
                         <Form.Label>State</Form.Label>
-                        <Form.Control placeholder="Enter state"  name='state' onChange={(e)=>onSetInput(e,i)}/>
+                        <Form.Control placeholder="Enter state"  name='state' onChange={(e)=>onSetInput(e,i)} defaultValue={v.state}/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridZip">
                         <Form.Label >Post Code</Form.Label>
-                        <Form.Control placeholder="Enter code"  name='postCode' onChange={(e)=>onSetInput(e,i)}/>
+                        <Form.Control placeholder="Enter code"  name='postCode' onChange={(e)=>onSetInput(e,i)} defaultValue={v.postCode}/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridZip">
                         <Form.Label>Primary</Form.Label>
@@ -88,7 +88,7 @@ const EditForm = () => {
                             label="Primary"
                             name="primary"
                             id="formHorizontalRadios1"
-                            value='primary'
+                            defaultValue={v.primary}
                             onChange={(e)=>onSetInput(e,i)}
                         />
                     </Form.Group>
@@ -97,8 +97,8 @@ const EditForm = () => {
                     Add More
                 </Button>}     
             </div>
-        })
-    }, [addData.length])
+        }) : <p>Loading Data...</p>
+    }, [cusData])
 
     return (
         <div>
@@ -157,10 +157,10 @@ const EditForm = () => {
                         {listData}
                     </div>
                     <div className='sub-btn'>
-                        <Button variant="primary">
+                        <Button variant="primary" style={{background:'red',border:'none'}}  onClick={()=>{window.location.reload()}}>
                             Cancel
                         </Button>
-                        <Button variant="primary" onClick={submitAllData}>
+                        <Button variant="primary" onClick={submitAllData} style={{background:'green',border:'none'}}>
                             Save
                         </Button>
                     </div>

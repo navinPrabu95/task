@@ -166,10 +166,10 @@ const AddCustomer = () => {
                         {listData}
                     </div>
                     <div className='sub-btn'>
-                        <Button variant="primary" style={{background:'red'}}  onClick={()=>{window.location.reload()}}>
+                        <Button variant="primary" style={{background:'red',border:'none'}}  onClick={()=>{window.location.reload()}}>
                             Cancel
                         </Button>
-                        <Button variant="primary" onClick={submitAllData} style={{background:'green'}}>
+                        <Button variant="primary" onClick={submitAllData} style={{background:'green',border:'none'}}>
                             Save
                         </Button>
                     </div>
